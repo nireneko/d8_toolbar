@@ -1,0 +1,14 @@
+nireneko.admin:
+  path: '/admin/nireneko'
+  defaults:
+    _controller: '\Drupal\nireneko\Controller\NirenekoController::nirenekoAdminMenuBlockPage'
+    _title: 'Nireneko'
+  requirements:
+    _permission: 'access nireneko toolbar'
+nireneko.root:
+  path: '/admin/nireneko/root'
+  defaults:
+    _controller: '\Drupal\nireneko\Controller\NirenekoController::nirenekoAdminMenuBlockPage'
+    _title: 'Neko Root'
+  requirements:
+    _permission: 'access nireneko toolbar'

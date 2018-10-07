@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nireneko
+label: Nireneko
+description: 'Menu for Nireneko Toolbar'
+locked: false

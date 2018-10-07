@@ -1,0 +1,5 @@
+access nireneko toolbar:
+  title: 'Access Nireneko toolbar'
+  description: 'Access to the menu point of Nireneko.'
+  restrict access: TRUE
+

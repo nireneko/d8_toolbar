@@ -1,0 +1,13 @@
+nireneko.root:
+  title: 'Neko root'
+  description: 'Menu basico para el toolbar.'
+  route_name: nireneko.root
+  menu_name: nireneko
+
+nireneko.children:
+  title: 'Neko child'
+  description: 'Sub menu basico para el toolbar.'
+  route_name: nireneko.root
+  parent: nireneko.root
+  menu_name: nireneko
+

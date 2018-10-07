@@ -1,0 +1,4 @@
+services:
+  nireneko.manager:
+    class: Drupal\nireneko\NirenekoManager
+    arguments: ['@menu.link_tree', '@menu.active_trail']

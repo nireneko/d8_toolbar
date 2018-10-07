@@ -1,0 +1,39 @@
+<?php
+
+
+use Drupal\nireneko\ToolbarHandler;
+use Drupal\Core\Menu\MenuTreeParameters;
+
+
+/**
+ * Implements hook_toolbar().
+ */
+function nireneko_toolbar() {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(ToolbarHandler::class)
+    ->toolbar();
+}
+
+/**
+ * Aqui se prepara el menu a mostrar en el toolbar, a esta funcion se le llama desde
+ * el array renderizable de la clase Drupal\nireneko\ToolbarHandler::toolbar
+ */
+function nireneko_prerender_toolbar_tray(array $element) {
+  /** @var \Drupal\toolbar\Menu\ToolbarMenuLinkTree $menu_tree */
+  $menu_tree = \Drupal::service('toolbar.menu_tree');
+
+  $parameters = new MenuTreeParameters();
+  $parameters->onlyEnabledLinks();
+
+  $tree = $menu_tree->load('nireneko', $parameters);
+
+  $manipulators = [
+    ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+    ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+  ];
+  $tree = $menu_tree->transform($tree, $manipulators);
+
+  $element['nireneko'] = $menu_tree->build($tree);
+
+  return $element;
+}

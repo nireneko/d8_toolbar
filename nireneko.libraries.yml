@@ -1,0 +1,9 @@
+toolbar:
+  version: '1.0'
+  css:
+    theme:
+      css/toolbar.icons.theme.css: {}
+  js:
+    js/nireneko_toolbar_menu.js: {}
+  dependencies:
+    - 'toolbar/toolbar'

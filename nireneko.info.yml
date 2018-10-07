@@ -1,0 +1,10 @@
+name: "Nireneko"
+package: "Nireneko"
+type: "module"
+description: "Modulo de ejemplo para la creacion de un Toolbar en el menu administrativo"
+core: 8.x
+version: 1.0
+dependencies:
+  - drupal:toolbar
+
+# https://nireneko.com/articulo/crear-menu-toolbar-drupal-8
