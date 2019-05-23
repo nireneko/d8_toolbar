@@ -23,7 +23,7 @@ function nireneko_prerender_toolbar_tray(array $element) {
   $menu_tree = \Drupal::service('toolbar.menu_tree');
 
   $parameters = new MenuTreeParameters();
-  $parameters->onlyEnabledLinks();
+  $parameters->setRoot('nireneko.admin')->excludeRoot()->onlyEnabledLinks();
 
   $tree = $menu_tree->load('nireneko', $parameters);
 
