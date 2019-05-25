@@ -25,7 +25,7 @@ function nireneko_prerender_toolbar_tray(array $element) {
   $parameters = new MenuTreeParameters();
   $parameters->setRoot('nireneko.admin')->excludeRoot()->onlyEnabledLinks();
 
-  $tree = $menu_tree->load('nireneko', $parameters);
+  $tree = $menu_tree->load('nireneko.root', $parameters);
 
   $manipulators = [
     ['callable' => 'menu.default_tree_manipulators:checkAccess'],
